@@ -28,7 +28,7 @@ redux with react, async actions redux-thunk, use json place holder api to fetch 
 
 ### 6 streams
 
-client: react router navigator, google Oauth2, redux form, modal (portal)
+client: react router navigator, google Oauth2, redux form, modal (portal), react fragment
 api: json-server for api
 rtmpserver: use OBS to stream
 
