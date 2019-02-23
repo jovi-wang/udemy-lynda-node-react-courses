@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CommentBox from 'components/CommentBox';
+import requireAuth from 'components/requireAuth';
 import CommentList from 'components/CommentList';
 import * as actions from 'actions';
 
 class App extends Component {
   renderButton() {
+    console.log(this.props)
     if (this.props.auth) {
       return (
         <button onClick={() => this.props.changeAuth(false)}>Sign Out</button>
@@ -36,7 +38,7 @@ class App extends Component {
     return (
       <div>
         {this.renderHeader()}
-        <Route path="/post" component={CommentBox} />
+        <Route path="/post" component={requireAuth(CommentBox)} />
         <Route path="/" exact component={CommentList} />
       </div>
     );
